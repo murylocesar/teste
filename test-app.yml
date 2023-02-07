@@ -1,0 +1,4 @@
+
+test:
+  url:
+    http://test-app-remote:8080
