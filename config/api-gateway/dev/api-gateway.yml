@@ -12,7 +12,7 @@ spring:
           filters:
             - StripPrefix=1 # required to strip the prefix made to the request . Ex /jio/customers request will go to jio service as /customers
         - id: praia-banking-integration
-          uri: http://localhost:90/
+          uri: http://localhost:8071/
           predicates:
             - Path= /api/banking-integration/**
           filters:
