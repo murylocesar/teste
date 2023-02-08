@@ -1,4 +1,21 @@
 
-test:
-  url:
-    http://test-app-remote:8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: praia-acessos
+          uri: http://localhost:8080/
+          predicates:
+            - Path= /api/acessos/**
+            - Header= store,vodaphone
+            - Query= store,vodaphone
+          filters:
+            - StripPrefix=1 # required to strip the prefix made to the request . Ex /jio/customers request will go to jio service as /customers
+        - id: praia-banking-integration
+          uri: http://localhost:8071/
+          predicates:
+            - Path= /api/banking-integration/**
+            - Header= store,vodaphone
+            - Query= store,vodaphone
+          filters:
+            - StripPrefix=1 # required to strip the prefix made to the request . Ex /jio/customers request will go to jio service as /customers
