@@ -19,4 +19,4 @@ spring:
             - StripPrefix=1 # required to strip the prefix made to the request . Ex /jio/customers request will go to jio service as /customers
 test:
   url:
-    'http://remoto-dev:8080'
+    'http://remoto-dev-alterado:8080'
